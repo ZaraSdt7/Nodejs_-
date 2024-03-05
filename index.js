@@ -7,6 +7,7 @@ const server = http.createServer((req,res)=>{
     //handler
     if(method === "GET" && url === '/'){
         res.write('Hello world')
+        res.end();
     }
     else if(method === "POST" && url === '/'){
         const body = '';
