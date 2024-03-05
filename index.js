@@ -6,7 +6,7 @@ const server = http.createServer((req,res)=>{
 
     //handler
     if(method === "GET" && url === '/'){
-        res.writeHead(200,{'Content-Type': 'application/json'})
+        res.writeHead(200,{'Content-Type': 'text/plain'})
         res.end('Hello world')
     }
     else if(method === "POST" && url === '/'){
@@ -15,12 +15,12 @@ const server = http.createServer((req,res)=>{
             body += chunk;
         })
         res.on('end',()=>{
-            res.writeHead(200,{'Content-Type': 'application/json'})
+            res.writeHead(200,{'Content-Type': 'text/plain'})
             res.end(body)
         })
     }
     else{
-        res.writeHead(400,{'Content-Type': 'application/json'})
+        res.writeHead(400,{'Content-Type': 'text/plain'})
         res.end('Bad Request')
     }
 })
