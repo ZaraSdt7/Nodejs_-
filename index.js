@@ -12,7 +12,7 @@ const server = http.createServer((req,res)=>{
     else if(method === "POST" && url === '/'){
         const body = '';
         req.on('data',(chunk)=>{
-            body = chunk;
+            body += chunk;
         })
         res.on('end',()=>{
             res.writeHead(200,{'Content-Type': 'application/json'})
