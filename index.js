@@ -19,6 +19,20 @@ const server = http.createServer((req,res)=>{
             res.end(body);
         })
     }
+    else if(method === "PUT" && url === '/') {
+        let body = '';
+        req.on('data',(chunk)=>{
+            body += chunk;
+        })
+        req.on('end',()=>{
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end(`Received PUT request with body: ${body}`);
+        })
+      }
+      else if(method === "DELETE" && url === '/') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Deleted!');
+      }
     else{
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Not Found');
