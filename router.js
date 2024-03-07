@@ -4,16 +4,15 @@ const http = require("http");
 const port = 5000;
 
 const router = {
-  get: {},
-  post: {},
-  put: {},
-  delete: {}
+  "GET": {},
+  "POST": {},
+  "PUT": {},
+  "DELETE": {}
 };
-
 const server = http.createServer((req, res) => {
   const { method, url } = req;
-  if (router[method.toUpperCase()][url]) {
-    router[method.toUpperCase()][url](req, res);
+  if (router[method][url]) {
+    router[method][url](req, res);
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('Not Found');
@@ -21,12 +20,12 @@ const server = http.createServer((req, res) => {
 });
 
 // Add  GET routes 
-router.get["/"] = (_req, res) => {
+router.GET["/"] = (_req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello, world!');
 }
 //POST route
-router.post["/"] = (req, res) => {
+router.POST["/"] = (req, res) => {
   let body = '';
   req.on('data', (chunk) => {
     body += chunk;
@@ -37,7 +36,7 @@ router.post["/"] = (req, res) => {
   })
 }
 //PUT route
-router.put["/"] = (req, res) => {
+router.PUT["/"] = (req, res) => {
     let body = '';
     req.on('data', (chunk) => {
       body += chunk;
@@ -49,7 +48,7 @@ router.put["/"] = (req, res) => {
   }
   
   //  DELETE route
-  router.delete["/"] = (req, res) => {
+  router.DELETE["/"] = (req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Deleted Piece of Content!');
   }
