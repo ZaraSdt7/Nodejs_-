@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
 });
 
 // Add  GET routes 
-router.delete["/"] = (_req, res) => {
+router.get["/"] = (_req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello, world!');
 }
