@@ -9,6 +9,7 @@ const router = {
   "PUT": {},
   "DELETE": {}
 };
+
 const server = http.createServer((req, res) => {
   const { method, url } = req;
   if (router[method][url]) {
