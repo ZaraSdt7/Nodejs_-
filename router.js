@@ -1,14 +1,12 @@
-
-
 const http = require("http");
 const port = 5000;
 
-const router = {
-  "GET": {},
+const router = ({
+  "GET":{},
   "POST": {},
   "PUT": {},
   "DELETE": {}
-};
+});
 
 const server = http.createServer((req, res) => {
   const { method, url } = req;
