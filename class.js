@@ -1,7 +1,7 @@
 const http = require("http");
 const port = 5000;
 
-class Apps {
+class App {
   constructor(){
      this.router = {
       GET: {},
@@ -52,7 +52,8 @@ class Apps {
     this.addRoute("DELETE", url, cb);
   }
 }
-const app = new Apps();
+const app = new App();
+
 app.addGet("/", (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello world!');
