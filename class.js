@@ -52,13 +52,13 @@ class Apps {
     this.addRoute("DELETE", url, cb);
   }
 }
-const server = new Apps();
-server.addGet("/", (req, res) => {
+const app = new Apps();
+app.addGet("/", (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello world!');
 });
 
-server.addPost("/", (req, res) => {
+app.addPost("/", (req, res) => {
   let body = '';
   req.on('data', (chunk) => {
     body += chunk;
@@ -69,7 +69,7 @@ server.addPost("/", (req, res) => {
   })
 });
 
-server.addPut("/", (req, res) => {
+app.addPut("/", (req, res) => {
   let body = '';
   req.on('data', (chunk) => {
     body += chunk;
@@ -80,9 +80,9 @@ server.addPut("/", (req, res) => {
   })
 });
 
-server.addDelete("/", (req, res) => {
+app.addDelete("/", (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Deleted');
 });
 
-server.listen();
+app.listen();
