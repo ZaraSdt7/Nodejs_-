@@ -1,5 +1,3 @@
-
-
 const http = require("http");
 const port = 5000;
 
@@ -35,32 +33,32 @@ class Apps {
   }
 
   //  GET route
-  addGetRoute(url, cb) {
+  addGet(url, cb) {
     this.addRoute("GET", url, cb);
   }
 
   // POST route
-  addPostRoute(url, cb) {
+  addPost(url, cb) {
     this.addRoute("POST", url, cb);
   }
 
   // PUT route
-  addPutRoute(url, cb) {
+  addPut(url, cb) {
     this.addRoute("PUT", url, cb);
   }
 
   // DELETE route
-  addDeleteRoute(url, cb) {
+  addDelete(url, cb) {
     this.addRoute("DELETE", url, cb);
   }
 }
 const server = new Apps();
-server.addGetRoute("/", (req, res) => {
+server.addGet("/", (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Hello world!');
 });
 
-server.addPostRoute("/", (req, res) => {
+server.addPost("/", (req, res) => {
   let body = '';
   req.on('data', (chunk) => {
     body += chunk;
@@ -71,7 +69,7 @@ server.addPostRoute("/", (req, res) => {
   })
 });
 
-server.addPutRoute("/", (req, res) => {
+server.addPut("/", (req, res) => {
   let body = '';
   req.on('data', (chunk) => {
     body += chunk;
@@ -82,7 +80,7 @@ server.addPutRoute("/", (req, res) => {
   })
 });
 
-server.addDeleteRoute("/", (req, res) => {
+server.addDelete("/", (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end('Deleted');
 });
