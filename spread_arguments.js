@@ -62,9 +62,9 @@ const apps = AppServer(
 // apps.listen()
 
 //این تابع وظیفه بستن سرور را به طور منظم و ایمن بر عهده دارد.
-process.on('SIGINT', () => {
-  apps.close(() => {
-    console.log('Server closed successfully');
-    process.exit(0);
-  });
-});
+// process.on('SIGINT', () => {
+//   apps.close(() => {
+//     console.log('Server closed successfully');
+//     process.exit(0);
+//   });
+// });
