@@ -4,13 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": " node index.js",
-    "dev": "nodemon node index.js"
+    "start": " node middleware.js",
+    "dev": "nodemon node middleware.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "curl": "^0.1.4",
-    "nodemon": "^3.1.0"
   }
 }
