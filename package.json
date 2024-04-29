@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": " node middleware.js",
-    "dev": "nodemon node middleware.js"
+    "start": " node functions-1.js",
+    "dev": "nodemon node functions-1.js"
   },
   "author": "",
   "license": "ISC",
