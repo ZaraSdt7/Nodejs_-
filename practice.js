@@ -1,3 +1,4 @@
+//switch-case
 let avarage ="11";
 switch(avarage){
     case "20":
@@ -18,3 +19,8 @@ switch(avarage){
                                         default:
                                             console.log("Level fired")
 }
+////////////////////////////////////////////////////////////////
+
+let captcha = Math.floor(Math.random()*10000 + 90000)
+console.log(captcha);
+////////////////////////////////////////////////////////////////
