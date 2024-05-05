@@ -24,3 +24,15 @@ switch(avarage){
 let captcha = Math.floor(Math.random()*10000 + 90000)
 console.log(captcha);
 ////////////////////////////////////////////////////////////////
+// forEach
+
+const users = ['zara','ali','fateme','juan'];
+users.forEach((user)=>{
+    console.log(user);
+});
+//////////////////////////////////////////////////////////
+let username=[{ id:1,name:'zara',family:'st', age:29},{id:2,name:'ali',family:'st', age:27},
+{id:3,name:'fatemeh',family:'dd', age:32}]
+username.forEach(function(usernames){
+    console.log('ids:', +  usernames.id +  "name:" + usernames.name  + 'family:' + usernames.family  +  'age:' + usernames.age);
+})
