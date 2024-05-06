@@ -36,3 +36,4 @@ let username=[{ id:1,name:'zara',family:'st', age:29},{id:2,name:'ali',family:'s
 username.forEach(function(usernames){
     console.log('ids:', +  usernames.id +  "name:" + usernames.name  + 'family:' + usernames.family  +  'age:' + usernames.age);
 })
+////////////////////////////////////////////////////////
